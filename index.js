@@ -170,6 +170,36 @@ class ultramsg {
         return this.sendRequest("POST", "contacts/unblock", params);
     }
 
+    // Groups
+
+    /**
+     * Get All Groups Info And Participants
+     * @returns {Promise<any|string|{error: string}|{error: string}>} Group Info & Participants Result
+     */
+    getAllGroupInfo() {
+        return this.sendRequest("GET", "groups");
+    }
+
+    /**
+     * Get All Groups id's
+     * @returns {Promise<any|string|{error: string}|{error: string}>} All Group ID's
+     * @param clear
+     */
+    getAllGroupId(clear) {
+        const params = { clear: clear }
+        return this.sendRequest("GET", "groups/ids", params);
+    }
+
+    /**
+     * Get Group Info & Participants By Group Id
+     * @param groupId Group Id
+     * @returns {Promise<any|string|{error: string}|{error: string}>} Group Info By GroupId
+     */
+    getGroupInfoById(groupId) {
+        const params = { groupId: groupId }
+        return this.sendRequest("GET", "groups/group", params);
+    }
+
     async sendRequest(method, path, params = {}) {
         let options = {}
         let url = "https://api.ultramsg.com/" + this.instance_id + "/" + path;

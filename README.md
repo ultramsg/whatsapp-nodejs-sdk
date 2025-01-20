@@ -441,6 +441,36 @@ const response = await api.checkContact(chatId);
 console.log(response)
 ```
 
+## Get All Groups Info And Participants
+
+```js  
+const response = await api.getAllGroupInfo();
+console.log(response)
+```
+
+## Get All Groups Info And Participants
+
+```js  
+let clear = true;
+const response = await api.getAllGroupId(clear);
+console.log(response)
+```
+
+## Get All Group ID's
+
+```js  
+const response = await api.getAllGroupInfo();
+console.log(response)
+```
+
+## Get Group Info & Participants By Group Id
+
+```js  
+let groupId = "14155552671@c.us";
+const response = await api.getGroupInfoById(groupId);
+console.log(response)
+```
+
 
 
 # Support
